@@ -20,12 +20,12 @@
 			<td>Description</td>
 		</tr>
 		<tr>
-			<% ideas.each do |idea|  %>
+			<% ideas.each do |idea, elements|  %>
 			<tr>
-				<% idea[:id] = ideas.to_s %>
-				<td><%= idea[:date_modified]%></td>
-				<td><%= idea[:id]%></td>
-				<td><%= idea[:description]%></td>
+				<% elements[:id] = idea.to_s %>
+				<td><%= elements[:date_modified]%></td>
+				<td><%= elements[:id]%></td>
+				<td><%= elements[:description]%></td>
 			</tr>
 			<% end %>
 		 </tr>
