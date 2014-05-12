@@ -1,8 +1,18 @@
 # encoding: utf-8
 require 'yaml'
 require 'erb'
+require 'sinatra'
 
-website_body = File.read('..\\html_templates\\home.html.erb')
-ideas = YAML.load_file("..\\libraries\\ideas.yml")
-rendered_html = ERB.new(website_body).result(binding)
-File.write("..\\rubytest\\home.html", rendered_html)
+
+get '/home.html' do
+	website_body = File.read('..\\html_templates\\home.html.erb')
+	ideas = YAML.load_file("..\\libraries\\ideas.yml")
+	rendered_html = ERB.new(website_body).result(binding)
+	# File.write("..\\rubytest\\home.html", rendered_html)
+	rendered_html
+end
+
+# hello_world_app = MyAwesomeWebApp.new
+
+# run hello_world_app
+# end
