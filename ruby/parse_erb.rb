@@ -5,9 +5,18 @@ require 'sinatra'
 
 
 get '/index.html' do
-	website_body = File.read('..\\html_templates\\index.html.erb')
+	index_body = File.read('..\\html_templates\\index.html.erb')
 	ideas = YAML.load_file("..\\libraries\\ideas.yml")
-	rendered_html = ERB.new(website_body).result(binding)
+	rendered_html = ERB.new(index_body).result(binding)
+	# File.write("..\\rubytest\\home.html", rendered_html)
+	rendered_html
+end
+
+get '/#{idea_number}.html' do
+	idea_body = File.read('..\\html_templates\\idea_view.html.erb')
+	ideas = YAML.load_file("..\\libraries\\ideas.yml")
+	ideas[:idea_number]
+	rendered_html = ERB.new(idea_body).result(binding)
 	# File.write("..\\rubytest\\home.html", rendered_html)
 	rendered_html
 end
@@ -17,7 +26,7 @@ get '/about.html' do
 	about_page
 end
 
-# hello_world_app = MyAwesomeWebApp.new
-
-# run hello_world_app
-# end
+get '/upload.html' do
+	upload_page = File.read('..\\html_templates\\upload.html')
+	upload_page
+end
