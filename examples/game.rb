@@ -1,4 +1,4 @@
-require 'sinatra'
+srequire 'sinatra'
 
 before do
   content_type :txt

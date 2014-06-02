@@ -4,11 +4,12 @@
 </head>
 <body>
 	<h1>Idea app</h1>
-	<div class="header">
+	<%= @header %>
+<!-- 	<div class="header">
 		<a href="index.html">Home</a>
 		<a href="upload.html">Upload</a>
 		<a href="about.html">About</a>
-	</div>
+	</div> -->
 	<div class="descr-text">
 		This is a dynamic app to upload ideas to. 
 	</div>
@@ -21,7 +22,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<% ideas.each do |idea, elements|  %>
+			<% @ideas.each do |idea, elements|  %>
 			<tr>
 				<% elements[:id] = idea.to_s %>
 				<td><%= elements[:date_modified]%></td>
