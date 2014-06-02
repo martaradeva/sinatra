@@ -12,27 +12,17 @@ content_type :html
 end
 
 get '/' do
-	# index_body = File.read('./views/index.html.erb')
-	# rendered_html = ERB.new(index_body).result(binding)
-	# File.write("../rubytest/home.html", rendered_html)
-	# rendered_html
 	erb :"index.html"
 end
 
 get '/idea/:number.html' do
-	idea_body = File.read('./views/idea_view.html.erb')
-	# @ideas[params[:number]]
-	rendered_html = ERB.new(idea_body).result(binding)
-	# File.write("../rubytest/home.html", rendered_html)
-	rendered_html
+	@number=params[:number]
+	rendered_html = erb :"idea_view.html"
 end
 
 # static pages at end
 
 get '/:static_page.html' do
-	# page_template = File.read("./views/#{params[:static_page]}")
-	# rendered_html = ERB.new(page_template).result(binding)
-	# rendered_html
 	url="#{params[:static_page]}.html".to_sym
 	erb url
 end

@@ -26,7 +26,7 @@
 			<tr>
 				<% elements[:id] = idea.to_s %>
 				<td><%= elements[:date_modified]%></td>
-				<td><%= elements[:id]%></td>
+				<td><a href="/idea/<%= elements[:id].to_s %>.html"><%= elements[:id]%></td>
 				<td><%= elements[:description]%></td>
 			</tr>
 			<% end %>

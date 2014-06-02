@@ -14,38 +14,17 @@
 		This is a page to view an idea in.
 	</div>
 	<table class="idea-table">
-		<tr><% elements=idea.NUMBER%>
+		<tr><% idea=@ideas[@number.to_sym]%>
 			<td>Date:</td>
-			<td><%= elements[:date_modified]%></td>
+			<td><%= idea[:date_modified]%></td>
 		</tr>
 		<tr>
 			<td><h1>Name:</h1></td>
-			<td><%= elements[:id]%></td>
+			<td><%= idea[:id]%></td>
 		</tr>
 		<tr>
 			<td>Description:</td>
-			<td><%= elements[:description]%></td>
+			<td><%= idea[:description]%></td>
 		</tr>
 	</table>
 </body>
-
-<!-- 
-	<table class="idea-table">
-		<tr> <td colspan="3">List of ideas</td></tr>
-		<tr>
-			<td>Date</td>
-			<td>Name</td>
-			<td>Description</td>
-		</tr>
-		<tr>
-			<% ideas.each do |idea, elements|  %>
-			<tr>
-				<% elements[:id] = idea.to_s %>
-				<td><%= elements[:date_modified]%></td>
-				<td><%= elements[:id]%></td>
-				<td><%= elements[:description]%></td>
-			</tr>
-			<% end %>
-		 </tr>
-	</table>
-</body> -->
