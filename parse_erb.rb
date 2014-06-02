@@ -26,12 +26,15 @@ get '/#{idea_number}.html' do
 	rendered_html
 end
 
-get '/about.html' do
-	about_page = File.read('./html_templates/about.html')
-	about_page
+# static pages at end
+
+get '/:static_page' do
+	page_template = File.read("./html_templates/#{params[:static_page]}")
+	rendered_html = ERB.new(page_template).result(binding)
+	rendered_html
 end
 
-get '/upload.html' do
-	upload_page = File.read('./html_templates/upload.html')
-	upload_page
-end
+# get '/upload.html' do
+# 	upload_page = File.read('./html_templates/upload.html')
+# 	upload_page
+# end
