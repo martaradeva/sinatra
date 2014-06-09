@@ -14,17 +14,22 @@
 		This is a page to view an idea in.
 	</div>
 	<table class="idea-table">
-		<tr><% idea=@ideas[@number.to_sym]%>
-			<td>Date:</td>
-			<td><%= idea[:date_modified]%></td>
-		</tr>
+		<% idea=@ideas[@number.to_sym]%>
 		<tr>
 			<td><h1>Name:</h1></td>
-			<td><%= idea[:id]%></td>
+			<td><h1><%= idea["title"]%></h1></td>
+		</tr>
+		<tr>
+			<td>Number:</td>
+			<td><%= @number.to_s%></td>
+		</tr>
+		<tr>
+			<td>Date:</td>
+			<td><%= idea["date_modified"]%></td>
 		</tr>
 		<tr>
 			<td>Description:</td>
-			<td><%= idea[:description]%></td>
+			<td><%= idea["description"]%></td>
 		</tr>
 	</table>
 </body>

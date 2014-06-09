@@ -6,7 +6,7 @@ require 'sinatra/reloader'
 
 # template_path = File.dirname(__FILE__) + '/../html'
 
-before do
+before do 
 content_type :html
 @ideas = YAML.load_file("./libraries/ideas.yml")
 @header = File.read('./views/header.html')
@@ -14,7 +14,16 @@ end
 
 get '/' do
 	erb :"index.html"
-	# blahblah
+end
+
+get '/upload' do
+	erb :"upload.html"
+end
+
+post '/upload.html' do
+	@ideas[@ideas.length]=params
+	File.write("./libraries/ideas.yml", @ideas.to_yaml)
+	redirect to('/')
 end
 
 get '/idea/:number.html' do

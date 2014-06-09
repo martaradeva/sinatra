@@ -5,14 +5,16 @@
 <body>
 	<h1>Idea app</h1>
 	<%= @header %>
-<!-- 	<div class="header">
-		<a href="home.html">Home</a>
-		<a href="upload.html">Upload</a>
-		<a href="about.html">About</a>
-	</div> -->
-	<div class="descr-text">
+<!-- 	<div class="descr-text">
 		Here Ideas will be uploaded. Coming soon!
-	</div>
+	</div> -->
+	<form method="post">
+		Idea title<input type="textarea" name="title" /><br>
+		Idea description<input type="textarea" name="description" /><br>
+		Date modified<input type="textarea" name="date" /><br>
+		<input type="submit" value="Upload idea">
+	</form>
+
 <!-- 	<table class="idea-table">
 		<tr> <td colspan="3">List of ideas</td></tr>
 		<tr>

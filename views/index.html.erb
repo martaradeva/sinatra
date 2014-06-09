@@ -17,6 +17,7 @@
 		<tr> <td colspan="3">List of ideas</td></tr>
 		<tr>
 			<td>Date</td>
+			<td>Number</td>
 			<td>Name</td>
 			<td>Description</td>
 			<td></td>
@@ -24,10 +25,11 @@
 		<tr>
 			<% @ideas.each do |idea, elements|  %>
 			<tr>
-				<% elements[:id] = idea.to_s %>
-				<td><%= elements[:date_modified]%></td>
-				<td><a href="/idea/<%= elements[:id].to_s %>.html"><%= elements[:id]%></td>
-				<td><%= elements[:description]%></td>
+				<% elements["id"] = idea.to_s %>
+				<td><%= elements["date_modified"]%></td>
+				<td><a href="/idea/<%= elements["id"].to_s %>.html"><%= elements["id"]%></td>
+				<td><%= elements["title"]%></td>
+				<td><%= elements["description"]%></td>
 			</tr>
 			<% end %>
 		 </tr>
