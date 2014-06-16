@@ -1,0 +1,10 @@
+/* OVERRIDE ME html, body {
+	height: 100%;
+}*/
+body {
+	overflow: hidden;
+	font-family: helvetica, arial, sans-serif;
+	background-color: #ffffff;
+
+	background-size: cover;
+}
