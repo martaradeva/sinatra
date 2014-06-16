@@ -1,1 +1,1 @@
-web: bundle exec ruby ./ruby/parse_erb.rb -p $PORT
+web: bundle exec ruby parse_erb.rb -p $PORT
