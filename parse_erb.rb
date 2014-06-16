@@ -39,6 +39,13 @@ post '/idea/:number/edit.html' do
 	redirect to('/')
 end
 
+get '/idea/:number/delete.html' do
+	@ideas.delete("#{params[:number]}".to_i)
+	@ideas
+	File.write("./libraries/ideas.yml", @ideas.to_yaml)
+	redirect to('/')
+end
+
 get '/idea/:number.html' do
 	@number=params[:number]
 	rendered_html = erb :"idea_view.html"
