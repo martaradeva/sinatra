@@ -1,16 +1,15 @@
 <!DOCTYPE HTML>
 <head>
 	<% idea=@ideas[@number.to_i]%>
-	<title>Edit</title>
+	<title>Edit idea</title>
 </head>
 <body>
 	<h1>Idea app</h1>
 	<%= @header %>
-<!-- 	<div class="descr-text">
-		Here Ideas will be uploaded. Coming soon!
-	</div> -->
-	EDIT PAGE
-	<form method="post">
+	<div class="descr-text">
+		On this page you can edit an existing idea. 
+	</div>
+	<form class="input_form" method="post">
 		Idea title<input type="textarea" name="title" value="<%= idea["title"]%>"/><br>
 		Idea description<input type="textarea" name="description" value= "<%= idea["description"].to_s %>"><br>
 		Date modified<input type="textarea" name="date_modified" value= "<%= idea["date_modified"] %>"/><br>

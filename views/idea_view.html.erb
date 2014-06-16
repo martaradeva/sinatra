@@ -7,7 +7,9 @@
 	<%= @header %>
 	<% idea=@ideas[@number.to_sym]%>
 	<%= idea%>
-
+	<div class="descr-text">
+		On this page you can view a single idea. 
+	</div>
 	<table class="idea-table">
 		<% idea=@ideas[@number.to_i]%>
 		<tr>
@@ -27,8 +29,7 @@
 			<td><%= idea["description"]%></td>
 		</tr>
 		<tr>
-			
-			<a href= <%="/idea/"+@number.to_s+"/edit.html"%> >Edit this idea</a>
+			<td><a href= <%="/idea/"+@number.to_s+"/edit.html"%> >Edit this idea</a></td>
 		</tr>
 	</table>
 <!-- 	<div class="header">
