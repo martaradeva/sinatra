@@ -2,7 +2,7 @@
 require 'yaml'
 require 'erb'
 require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 
 # template_path = File.dirname(__FILE__) + '/../html'
 
