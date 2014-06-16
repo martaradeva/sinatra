@@ -5,16 +5,11 @@
 <body>
 	<h1>Idea app</h1>
 	<%= @header %>
-<!-- 	<div class="header">
-		<a href="home.html">Home</a>
-		<a href="upload.html">Upload</a>
-		<a href="about.html">About</a>
-	</div> -->
-	<div class="descr-text">
-		This is a page to view an idea in.
-	</div>
+	<% idea=@ideas[@number.to_sym]%>
+	<%= idea%>
+
 	<table class="idea-table">
-		<% idea=@ideas[@number.to_sym]%>
+		<% idea=@ideas[@number.to_i]%>
 		<tr>
 			<td><h1>Name:</h1></td>
 			<td><h1><%= idea["title"]%></h1></td>
@@ -32,4 +27,13 @@
 			<td><%= idea["description"]%></td>
 		</tr>
 	</table>
+<!-- 	<div class="header">
+		<a href="home.html">Home</a>
+		<a href="upload.html">Upload</a>
+		<a href="about.html">About</a>
+	</div> -->
+<!-- 	<div class="descr-text">
+		This is a page to view an idea in.
+	</div> -->
+
 </body>

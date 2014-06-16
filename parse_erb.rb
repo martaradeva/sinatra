@@ -28,7 +28,9 @@ end
 
 get '/idea/:number.html' do
 	@number=params[:number]
+	p @ideas
 	rendered_html = erb :"idea_view.html"
+	# idea
 end
 
 # static pages at end
