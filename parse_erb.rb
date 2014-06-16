@@ -26,16 +26,23 @@ post '/upload.html' do
 	redirect to('/')
 end
 
-get '/idea/:number.html' do
-	@number=params[:number]
-	rendered_html = erb :"idea_view.html"
-end
-
 get '/idea/:number/edit.html' do
 	@number=params[:number]
 	rendered_html = erb :"edit.html"
 end
 
+post '/idea/:number/edit.html' do
+	idea = {"title" => params["title"], "description" => params["description"], "date_modified" => params["date_modified"]}
+	@ideas[params[:number].to_i]=idea
+	# da otreje samo nujnite parametri
+	File.write("./libraries/ideas.yml", @ideas.to_yaml)
+	redirect to('/')
+end
+
+get '/idea/:number.html' do
+	@number=params[:number]
+	rendered_html = erb :"idea_view.html"
+end
 # static pages at end
 
 get '/:static_page.html' do

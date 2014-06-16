@@ -1,7 +1,7 @@
 ---
 0:
   title: teapot
-  description: A vessel to brew tea in
+  description: ! 'A vessel to brew tea in : )'
   date_modified: 28 02
 1:
   title: kettle
@@ -9,8 +9,12 @@
   date_modified: 29 02
 2:
   title: ! 'sty '
-  description: r ssx
-  date_modified: ! 'zr '
+  description: nice one
+  date_modified: may
+  splat: []
+  captures:
+  - '2'
+  number: '2'
 3:
   title: bhx
   description: xbh
