@@ -2,7 +2,7 @@
 <head>
 	<% idea=@ideas[@number.to_i]%>
 	<title>Edit idea</title>
-	<link rel="stylesheet" type="text/css" href="../styles/idea_app.css">
+	<link rel="stylesheet" type="text/css" href="../idea_app.css">
 </head>
 <body>
 	<h1>Idea app</h1>
@@ -14,6 +14,7 @@
 		Idea title<input type="textarea" name="title" value="<%= idea["title"]%>"/><br>
 		Idea description<input type="textarea" name="description" value= "<%= idea["description"].to_s %>"><br>
 		Date modified<input type="textarea" name="date_modified" value= "<%= idea["date_modified"] %>"/><br>
+		Author<input type="textarea" name="author" value= "<%= idea["author"] %>"/><br>
 		<input type="submit" value="Save changes">
 	</form>
 </body>

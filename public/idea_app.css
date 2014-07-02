@@ -1,0 +1,52 @@
+/* OVERRIDE ME html, body {
+	height: 100%;
+}*/
+body {
+	overflow: hidden;
+	font-family: helvetica, arial, sans-serif;
+	color: white;
+	background-image: url("bg-gray.png");
+	/*background-repeat: no-repeat;*/
+	background-size: cover;
+}
+.hidden {
+	visibility: hidden;
+}
+h1 {
+	
+	font-size: 30px;
+	font-family: helvetica, arial, sans-serif;
+	color: #ff3366;
+	vertical-align= bottom;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+/*.tt{
+	margin-top: 20%;
+	width: 100%;
+	height: 60%;
+}
+.tdleft {
+	width: 70%;
+	text-align: right;
+	vertical-align: bottom;
+	padding-right: 20px; 
+}
+.tdright {
+	width: 29%;
+	text-align: left; 
+	vertical-align: bottom; */
+}
+/* LINKS*/
+a:link {
+	color: #ff3366;
+}
+a:visited {
+	color: #ff9999;
+}
+a:hover {
+	color: #ff0033;
+	
+}

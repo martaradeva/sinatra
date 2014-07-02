@@ -3,11 +3,18 @@
   title: teapot
   description: ! 'A vessel to brew tea in : )'
   date_modified: 28 02
+  author: gosho
 1:
   title: kettle
   description: A vessel to boil water in
   date_modified: 29 02
+  author: pesho
 2:
   title: ! 'sty '
   description: nice one
   date_modified: may
+  author: mimi
+3:
+  title: test the html form
+  description: try if it works
+  date_modified: today
