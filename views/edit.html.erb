@@ -5,16 +5,30 @@
 	<link rel="stylesheet" type="text/css" href="/idea_app.css">
 </head>
 <body>
-	<h1>Idea app</h1>
+	<div class="picture-header">
+		<div class="title">Idea app</div>
+	</div>
 	<%= @header %>
 	<div class="descr-text">
 		On this page you can edit an existing idea. 
 	</div>
 	<form class="input_form" method="post">
-		Idea title<input type="textarea" name="title" value="<%= idea["title"]%>"/><br>
-		Idea description<input type="textarea" name="description" value= "<%= idea["description"].to_s %>"><br>
-		Date modified<input type="textarea" name="date_modified" value= "<%= idea["date_modified"] %>"/><br>
-		Author<input type="textarea" name="author" value= "<%= idea["author"] %>"/><br>
-		<input type="submit" value="Save changes">
+		<table class="idea-table">
+			<tr>
+				<td>Idea title</td><td><input type="textarea" name="title" value="<%= idea["title"]%>"/></td>
+			</tr>
+			<tr>
+				<td>Idea description</td><td><input type="textarea" name="description" value= "<%= idea["description"].to_s %>"/></td>
+			</tr>
+			<tr>
+				<td>Date modified</td><td><input type="textarea" name="date_modified" value= "<%= idea["date_modified"] %>"/><br></td>
+			</tr>
+			<tr>
+				<td>Author</td><td><input type="textarea" name="author" value= "<%= idea["author"] %>"/></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Save changes"></td>
+			</tr>
+		</table>
 	</form>
-</body>
+</body> 

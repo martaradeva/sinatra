@@ -4,17 +4,31 @@
 	<link rel="stylesheet" type="text/css" href="/idea_app.css">
 </head>
 <body>
-	<h1>Idea app</h1>
+	<div class="picture-header">
+		<div class="title">Idea app</div>
+	</div>
 	<%= @header %>
 	<div class="descr-text">
 		On this page you can upload a new idea. 
 	</div>
 	<form class="input_form" method="post">
-		Idea title<input type="textarea" name="title" /><br>
-		Idea description<input type="textarea" name="description" /><br>
-		Date modified<input type="textarea" name="date_modified" /><br>
-		Author<input type="textarea" name="author" /><br>
-		<input type="submit" value="Upload idea">
+		<table class="idea-table">
+			<tr>
+				<td>Idea title</td><td><input type="textarea" name="title" /></td>
+			</tr>
+			<tr>
+				<td>Idea description</td><td><input type="textarea" name="description" /></td>
+			</tr>
+			<tr>
+				<td>Date modified</td><td><input type="textarea" name="date_modified" /><br></td>
+			</tr>
+			<tr>
+				<td>Author</td><td><input type="textarea" name="author" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Upload idea"></td>
+			</tr>
+		</table>
 	</form>
 
 <!-- 	<table class="idea-table">

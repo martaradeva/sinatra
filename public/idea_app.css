@@ -56,27 +56,84 @@ table {
 body {
 	overflow: hidden;
 	font-family: helvetica, arial, sans-serif;
+	text-align: center;
 	color: white;
 	background-image: url("bg-gray.png");
 	/*background-repeat: no-repeat;*/
 	background-size: cover;
 }
+.header{
+	background-color: white;
+	padding: 20px;
+}
+.button {
+	width: 20%;
+	padding: 20px;
+	display: inline;
+}
+.button:hover {
+	background-color: #cccccc;
+	transition: background-color 250ms;
+}
+.picture-header {
+	position: relative;
+	height: 200px;
+	background-image: url("lightbulbs.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.title {
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	font-size: 30px;
+	font-family: helvetica, arial, sans-serif;
+	color: white;
+}
 td {
-	padding:10;
+	padding:10px;
+	text-align: left;
 }
 .hidden {
 	visibility: hidden;
 }
 h1 {
-	
 	font-size: 30px;
 	font-family: helvetica, arial, sans-serif;
 	color: #ff3366;
-	vertical-align= bottom;
 	-webkit-margin-before: 0px;
 	-webkit-margin-after: 0px;
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
+}
+h2 {
+	font-size: 20px;
+	font-family: helvetica, arial, sans-serif;
+	color: #ffcccc;
+	padding-bottom: 5px;
+	border-bottom: 1px solid white;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+h3 {
+	font-size: 15px;
+	font-weight: bold;
+	font-family: helvetica, arial, sans-serif;
+	color: white;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+.idea-table {
+	margin: auto;
+}
+.descr-text {
+	padding: 10px;
+	color: white;
 }
 /*.tt{
 	margin-top: 20%;

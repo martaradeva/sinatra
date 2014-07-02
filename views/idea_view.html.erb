@@ -4,7 +4,9 @@
 	<link rel="stylesheet" type="text/css" href="/idea_app.css">
 </head>
 <body>
-	<h1>Idea app</h1>
+	<div class="picture-header">
+		<div class="title">Idea app</div>
+	</div>
 	<%= @header %>
 	<% idea=@ideas[@number.to_sym]%>
 	<%= idea%>
