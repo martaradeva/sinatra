@@ -34,7 +34,7 @@ get '/idea/:number/edit.html' do
 end
 
 post '/idea/:number/edit.html' do
-	idea = {"title" => params["title"], "description" => params["description"], "date_modified" => params["date_modified"]}
+	idea = {"title" => params["title"], "description" => params["description"], "date_modified" => params["date_modified"], "author" => params["author"]}
 	@ideas[params[:number].to_i]=idea
 	# da otreje samo nujnite parametri
 	File.write("./libraries/ideas.yml", @ideas.to_yaml)
