@@ -6,11 +6,14 @@ class IdeaApp < Sinatra::Application
 	require 'yaml'
 	require 'erb'
 	require 'sinatra'
+	require 'data_mapper'
+	require 'dm-migrations'
 	configure :development do
 		require 'sinatra/reloader'
 	end
 
-	before do 
+	before do
+	DataMapper.auto_upgrade!
 	content_type :html
 	@ideas = YAML.load_file("./libraries/ideas.yml")
 	@header = File.read('./views/header.html')
@@ -44,7 +47,7 @@ class IdeaApp < Sinatra::Application
 	end
 
 	get '/idea/:number/delete.html' do
-		@ideas.delete("#{params[:number]}".to_i)
+		@ideas.delete(params[:number].to_i)
 		@ideas
 		File.write("./libraries/ideas.yml", @ideas.to_yaml)
 		redirect to('/')

@@ -1,4 +1,5 @@
-require './parse_erb'
+require './idea_app'
+require './idea_class'
 require 'irb'
 
 IRB.start
