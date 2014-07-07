@@ -1,4 +1,0 @@
-require './parse_erb'
-require 'irb'
-
-IRB.start
