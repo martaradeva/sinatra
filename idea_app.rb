@@ -55,21 +55,19 @@ class IdeaApp < Sinatra::Application
 		@idea = Idea.get(params[:id])
 		@idea.update(
 			# :image_url   => params[] -- FILE UPLOAD LATER
-			# :id          => params[:id],
 			:title       => params["title"],
 			:description => params["description"],
 			:author      => params["author"],
 			:created_at  => Time.now
 		)
 		@idea.save
-		redirect to('/')
+		redirect to('/success.html')
 	end
 
-	get '/idea/:number/delete.html' do
-		@ideas.delete(params[:number].to_i)
-		@ideas
-		File.write("./libraries/ideas.yml", @ideas.to_yaml)
-		redirect to('/')
+	get '/idea/:id/delete.html' do
+		@idea=Idea.get(params[:id])
+		@idea.destroy
+		redirect to('/success.html')
 	end
 
 	get '/idea/:id.html' do

@@ -20,8 +20,4 @@ class Comment
 	belongs_to :idea
 end
 
-def Call
-	st;ha
-end
-
 DataMapper.finalize
