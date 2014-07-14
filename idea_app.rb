@@ -4,22 +4,15 @@ require 'yaml'
 require 'erb'
 # require 'sinatra'
 require 'data_mapper'
+require 'dm-postgres-adapter'
 # require 'dm-migrations'
 require './idea_class'
-require 'SQLite3'
-
-# db_path = "sqlite://#{File.expand_path('.')}/libraries/ideas.db"
-# db_path = "postgres://user:password@hostname/database"
-db_url = ENV["DATABASE_URL"] || "sqlite://#{File.expand_path('.')}/libraries/ideas.db"
-# puts db_path
-DataMapper.setup(:default, db_url) # A Sqlite3 connection to a persistent database
-# DataMapper.auto_migrate!
-DataMapper.auto_upgrade! # refreshes databases without deleting entries
 
 class IdeaApp < Sinatra::Application
 
 	configure :development do
 		require 'sinatra/reloader'
+		require 'SQLite3'
 	end
 
 	before do
@@ -83,3 +76,11 @@ class IdeaApp < Sinatra::Application
 		erb url
 	end
 end
+
+# db_path = "sqlite://#{File.expand_path('.')}/libraries/ideas.db"
+# db_path = "postgres://user:password@hostname/database"
+db_url = ENV["DATABASE_URL"] || "sqlite://#{File.expand_path('.')}/libraries/ideas.db"
+# puts db_path
+DataMapper.setup(:default, db_url) # A Sqlite3 connection to a persistent database
+# DataMapper.auto_migrate!
+DataMapper.auto_upgrade! # refreshes databases without deleting entries

@@ -4,4 +4,4 @@ gem 'sinatra'
 gem 'pg'
 gem 'dm-postgres-adapter'
 gem 'erubis'
-gem 'sqlite3'
+gem 'sqlite3', group: :development
