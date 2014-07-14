@@ -13,7 +13,6 @@
 		On this page you can view a single idea. 
 	</div>
 	<table class="idea-table">
-<!-- 		<% idea=@ideas[@number.to_i]%> -->
 		<tr>
 			<td><h1>Name:</h1></td>
 			<td><h1><%= @idea.title%></h1></td>
@@ -35,10 +34,10 @@
 			<td><%= @idea.author%></td>
 		</tr>
 		<tr>
-			<td><a href= <%="/idea/"+@number.to_s+"/edit.html"%> >Edit this idea</a></td>
+			<td><a href= <%="/idea/#{@idea.id.to_s}/edit.html"%> >Edit this idea</a></td>
 		</tr>
 		<tr>
-			<td><a href= <%="/idea/"+@number.to_s+"/delete.html"%> >Delete this idea</a></td>
+			<td><a href= <%="/idea/#{@idea.id.to_s}/delete.html"%> >Delete this idea</a></td>
 		</tr>
 	</table>
 <!-- 	<div class="header">

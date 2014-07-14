@@ -48,12 +48,12 @@ class IdeaApp < Sinatra::Application
 		redirect to('/success.html')
 	end
 
-	get '/idea/:number/edit.html' do
-		@number=params[:number]
-		rendered_html = erb :"edit.html"
+	get '/idea/:id/edit.html' do
+		@idea = Idea.get(params[:id])
+		erb :"edit.html"
 	end
 
-	post '/idea/:number/edit.html' do
+	post '/idea/:id/edit.html' do
 		@idea = Idea.create(
 			# :image_url   => params[] -- FILE UPLOAD LATER
 			:id          => params[:number],
@@ -79,7 +79,6 @@ class IdeaApp < Sinatra::Application
 	end
 
 	get '/idea/:id.html' do
-
 		@idea = Idea.get(params[:id])
 		erb :"idea_view.html"
 	end
