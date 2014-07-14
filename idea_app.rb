@@ -20,9 +20,7 @@ class IdeaApp < Sinatra::Application
 		require 'sinatra/reloader'
 	end
 
-
 	before do
-	
 	content_type :html
 	@ideas = Idea.all
 	@header = File.read('./views/header.html')
@@ -31,7 +29,6 @@ class IdeaApp < Sinatra::Application
 
 	get '/' do
 		erb :"index.html"
-		# @ideas.inspect
 	end
 
 	get '/upload' do
@@ -46,13 +43,14 @@ class IdeaApp < Sinatra::Application
 			:author      => params["author"],
 			:created_at  => Time.now
 		)
-		# @idea.save
-		# @ideas[@ideas.length]=params
-		# File.write("./libraries/ideas.yml", @ideas.to_yaml)
 		# "Idea Successfully uploaded"
 		# Wait 400
-		redirect to('/')
+		redirect to('/success.html')
 	end
+
+	# get '/success' do
+	# 	xb
+	# end
 
 	get '/idea/:number/edit.html' do
 		@number=params[:number]
