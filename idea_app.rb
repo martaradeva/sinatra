@@ -48,10 +48,6 @@ class IdeaApp < Sinatra::Application
 		redirect to('/success.html')
 	end
 
-	# get '/success' do
-	# 	xb
-	# end
-
 	get '/idea/:number/edit.html' do
 		@number=params[:number]
 		rendered_html = erb :"edit.html"
@@ -82,9 +78,10 @@ class IdeaApp < Sinatra::Application
 		redirect to('/')
 	end
 
-	get '/idea/:number.html' do
-		@number=params[:number]
-		rendered_html = erb :"idea_view.html"
+	get '/idea/:id.html' do
+
+		@idea = Idea.get(params[:id])
+		erb :"idea_view.html"
 	end
 	# static pages at end
 
