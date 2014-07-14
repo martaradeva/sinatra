@@ -43,8 +43,6 @@ class IdeaApp < Sinatra::Application
 			:author      => params["author"],
 			:created_at  => Time.now
 		)
-		# "Idea Successfully uploaded"
-		# Wait 400
 		redirect to('/success.html')
 	end
 
@@ -54,20 +52,16 @@ class IdeaApp < Sinatra::Application
 	end
 
 	post '/idea/:id/edit.html' do
-		@idea = Idea.create(
+		@idea = Idea.get(params[:id])
+		@idea.update(
 			# :image_url   => params[] -- FILE UPLOAD LATER
-			:id          => params[:number],
+			# :id          => params[:id],
 			:title       => params["title"],
 			:description => params["description"],
 			:author      => params["author"],
 			:created_at  => Time.now
 		)
 		@idea.save
-
-		# idea = {"title" => params["title"], "description" => params["description"], "date_modified" => params["date_modified"], "author" => params["author"]}
-		# @ideas[params[:number].to_i]=idea
-		# # da otreje samo nujnite parametri
-		# File.write("./libraries/ideas.yml", @ideas.to_yaml)
 		redirect to('/')
 	end
 
