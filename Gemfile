@@ -5,6 +5,7 @@ gem 'sinatra-base'
 gem 'data_mapper'
 gem 'erubis'
 gem 'dm-migrations'
+gem 'carrierwave'
 
 gem 'pg', group: :production
 gem 'dm-postgres-adapter', group: :production

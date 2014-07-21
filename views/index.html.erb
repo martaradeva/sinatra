@@ -25,7 +25,7 @@
 		<tr>
 			<% @ideas.each do |idea| %>
 			<tr>
-				<td><%= idea.created_at %></td>
+				<td><%= idea.created_at.strftime(@date_format) %></td>
 				<td><a href="/idea/<%= idea.id.to_s %>.html"><%= idea.id %></td>
 				<td><%= idea.title %></td>
 				<td><%= idea.description %></td>

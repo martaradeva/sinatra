@@ -7,7 +7,18 @@ class Idea
 	property :description,   Text
 	property :author,        String
 	property :created_at,    DateTime
+
+	mount_uploader :image, ImageUploader
+
 	has n, :comments
+end
+
+class ImageUploader < CarrierWave::Uploader::Base
+	def extensions_white_list
+		%w(jpg jpeg gif png)
+	end
+
+	storage :file
 end
 
 class Comment

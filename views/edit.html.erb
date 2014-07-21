@@ -21,7 +21,7 @@
 				<td>Idea description</td><td><input type="textarea" name="description" value= "<%= @idea.description.to_s %>"/></td>
 			</tr>
 			<tr>
-				<td>Date modified</td><td><input type="textarea" name="date_modified" value= "<%= @idea.created_at %>"/><br></td>
+				<td>Date modified</td><td><input type="textarea" name="date_modified" value= "<%= @idea.created_at.strftime(@date_format) %>"/><br></td>
 			</tr>
 			<tr>
 				<td>Author</td><td><input type="textarea" name="author" value= "<%= @idea.author %>"/></td>

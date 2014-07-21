@@ -2,25 +2,17 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
+
 require './idea_class'
 
 class IdeaApp < Sinatra::Application
-
-	configure :development do
-		require 'sinatra/reloader'
-		require 'SQLite3'
-		# require 'pg'
-	end
-
-	configure :production do
-		require 'dm-postgres-adapter'
-	end
 
 	before do
 	content_type :html
 	@ideas = Idea.all
 	@header = File.read('./views/header.html')
 	@idea = Idea.new
+	@date_format = "%m/%d/%Y at %I:%M"
 	end
 
 	get '/' do
