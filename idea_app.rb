@@ -1,11 +1,7 @@
 # encoding: utf-8
-require 'sinatra/base'
-require 'yaml'
-require 'erb'
-# require 'sinatra'
-require 'data_mapper'
-require 'dm-postgres-adapter'
-# require 'dm-migrations'
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default)
 require './idea_class'
 
 class IdeaApp < Sinatra::Application
@@ -13,6 +9,11 @@ class IdeaApp < Sinatra::Application
 	configure :development do
 		require 'sinatra/reloader'
 		require 'SQLite3'
+		# require 'pg'
+	end
+
+	configure :production do
+		require 'dm-postgres-adapter'
 	end
 
 	before do

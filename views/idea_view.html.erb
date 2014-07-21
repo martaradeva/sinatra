@@ -23,7 +23,7 @@
 		</tr>
 		<tr>
 			<td>Date:</td>
-			<td><%= @idea.created_at%></td>
+			<td><%= @idea.created_at.strftime("%d/%m/%Y %H:%M")%></td>
 		</tr>
 		<tr>
 			<td>Description:</td>
