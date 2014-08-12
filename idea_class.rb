@@ -8,8 +8,6 @@ class Idea
 	property :author,        String
 	property :created_at,    DateTime
 
-	mount_uploader :image, ImageUploader
-
 	has n, :comments
 end
 

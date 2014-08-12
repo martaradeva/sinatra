@@ -6,6 +6,7 @@ gem 'data_mapper'
 gem 'erubis'
 gem 'dm-migrations'
 gem 'carrierwave'
+gem 'carrierwave-datamapper'
 
 gem 'pg', group: :production
 gem 'dm-postgres-adapter', group: :production
